@@ -1,0 +1,61 @@
+name: Diabetic
+options:
+    bundleIdPrefix: starushkinandtsukhlo
+    developmentLanguage: en
+    knownRegions: ["en"]
+    createIntermediateGroups: true
+settings:
+  base:
+    VERSIONING_SYSTEM: apple-generic
+    MARKETING_VERSION: 1.0.0
+    CURRENT_PROJECT_VERSION: 0
+    SWIFT_VERSION: 5.0
+configs:
+    Release: release
+targets:
+    Diabetic:
+      type: application
+      platform: iOS
+      deploymentTarget: 16.0
+      dependencies:
+        - package: DesignSystem
+          product: DesignSystemImp
+      dependencies:
+        - package: swift-composable-architecture
+          product: ComposableArchitecture
+        - package: swiftui-flow-layout
+          product: SwiftUIFlowLayout
+        - package: Nuke
+        - package: Scyther
+        - package: AutoChangeable
+      settings:
+        base:
+        MARKETING_VERSION: 1.0
+      sources:
+        - path: Diabetic
+      prebuildScripts:
+      - script: |
+                export PATH="$PATH:/opt/homebrew/bin"
+                        
+                if which mint >/dev/null; then
+                    xcrun --sdk macosx make swiftgen
+                fi
+        name: SwiftGen
+packages:
+    swift-composable-architecture:
+        url: https://github.com/pointfreeco/swift-composable-architecture
+        exactVersion: 1.3.0
+    swiftui-flow-layout:
+        url: https://github.com/globulus/swiftui-flow-layout
+        from: 1.0.4
+    Nuke:
+        url: https://github.com/kean/Nuke.git
+        exactVersion: 12.1.6
+    Scyther:
+        url: https://github.com/bstillitano/Scyther.git
+        from: 1.8.0
+    AutoChangeable:
+        url: https://github.com/almazrafi/AutoChangeable.git
+        from: 1.0.1
+    DesignSystem:
+        path: Features/DesignSystem/Packages/DesignSystem

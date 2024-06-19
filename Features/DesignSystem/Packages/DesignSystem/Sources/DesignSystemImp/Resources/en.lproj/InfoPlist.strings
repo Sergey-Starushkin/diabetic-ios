@@ -1,0 +1,4 @@
+"NSUserTrackingUsageDescription" = "This allows the app to provide you with the most relevant ads and content possible.";
+"NSPhotoLibraryUsageDescription" = "Allow “CV Builder” to access your camera to take a photo as my profile image.";
+"NSCameraUsageDescription" = "Allow “CV Builder” to access your camera to take a photo as my profile image.";
+

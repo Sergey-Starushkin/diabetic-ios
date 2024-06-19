@@ -1,0 +1,32 @@
+strings:
+    inputs:
+        - Features/DesignSystem/Packages/DesignSystem/Sources/DesignSystemImp/Resources/en.lproj/Localizable.strings
+        - Features/DesignSystem/Packages/DesignSystem/Sources/DesignSystemImp/Resources/en.lproj/Localizable.stringsdict
+    outputs:
+        templatePath: SwiftgenTemplates/swiftgen-strings-custom-template.stencil
+        output: Features/DesignSystem/Packages/DesignSystem/Sources/DesignSystemImp/Generated/Strings.swift
+        params:
+            publicAccess: 1
+xcassets:
+    inputs: Features/DesignSystem/Packages/DesignSystem/Sources/DesignSystemImp/Resources/Assets.xcassets
+    outputs:
+        templateName: swift5
+        output: Features/DesignSystem/Packages/DesignSystem/Sources/DesignSystemImp/Generated/Assets.swift
+        params:
+            publicAccess: 1
+plist:
+    - inputs:
+        - Diabetic/Info.plist
+      outputs:
+        templateName: runtime-swift4
+        output: Features/DesignSystem/Packages/DesignSystem/Sources/DesignSystemImp/Generated/Plist.swift
+        params:
+            publicAccess: 1
+fonts:
+  inputs:
+    - Features/DesignSystem/Packages/DesignSystem/Sources/DesignSystemImp/Resources/Fonts
+  outputs:
+    templateName: swift5
+    output: Features/DesignSystem/Packages/DesignSystem/Sources/DesignSystemImp/Generated/Fonts.swift
+    params:
+        publicAccess: 1
